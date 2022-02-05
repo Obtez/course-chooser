@@ -1,13 +1,17 @@
-.container {
+.main__container {
   width: min(90%, 960px);
+  min-height: 100vh;
   margin: 0 auto;
 }
 
 .navbar__wrapper {
+  position: sticky;
   padding: 1rem 0;
 }
 
 .navbar {
+  width: min(90%, 960px);
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
