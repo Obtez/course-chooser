@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './Layout.module.scss';
+import AnchorLink from "../Atoms/AnchorLink/AnchorLink";
 
 export default function Navbar() {
   return (<div className={styles.navbar__wrapper}>
@@ -11,21 +12,15 @@ export default function Navbar() {
         </Link>
         <ul className={styles.navbar__menu}>
           <li>
-            <Link href={'/'}>
-              <a>Home</a>
-            </Link>
+            <AnchorLink href={'/'}>Home</AnchorLink>
           </li>
 
           <li>
-            <Link href={'/courses'}>
-              <a>Courses</a>
-            </Link>
+            <AnchorLink href={'/courses'}>Courses</AnchorLink>
           </li>
 
           <li>
-            <Link href={'/profile'}>
-              <a>Profile</a>
-            </Link>
+            <AnchorLink href={'/profile'}>Profile</AnchorLink>
           </li>
         </ul>
       </div>
