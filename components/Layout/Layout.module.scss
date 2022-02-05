@@ -1,6 +1,6 @@
 .main__container {
   width: min(90%, 960px);
-  min-height: 100vh;
+  min-height: calc(100vh - 150px);
   margin: 0 auto;
 }
 
@@ -21,4 +21,9 @@
     display: flex;
     justify-content: space-between;
   }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
 }
