@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="Extracted navbar link items into atomic components (anchorlinks)">
-      <change afterPath="$PROJECT_DIR$/styles/_colors.scss" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="basic homepage&#10;AnchorLink now has variants =primary =secondary">
+      <change afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/Courses.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Atoms/AnchorLink/AnchorLink.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/AnchorLink/AnchorLink.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/AnchorLink/AnchorLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/AnchorLink/AnchorLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Layout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Layout.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1644094735287</updated>
-      <workItem from="1644094740176" duration="5697000" />
+      <workItem from="1644094740176" duration="6194000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -148,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644098733163</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="basic homepage&#10;AnchorLink now has variants =primary =secondary">
+      <created>1644100557025</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644100557025</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +175,7 @@
     <MESSAGE value="added auth0" />
     <MESSAGE value="responsive styling for navbar" />
     <MESSAGE value="Extracted navbar link items into atomic components (anchorlinks)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted navbar link items into atomic components (anchorlinks)" />
+    <MESSAGE value="basic homepage&#10;AnchorLink now has variants =primary =secondary" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic homepage&#10;AnchorLink now has variants =primary =secondary" />
   </component>
 </project>
