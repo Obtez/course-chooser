@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from "@auth0/nextjs-auth0";
+import NewUserForm from "../NewUser/NewUserForm";
 
 type Props = {
   children: React.ReactNode;
@@ -38,7 +39,9 @@ export default function NewUserWrapper({ children }: Props) {
     <div>
       {
         isNew ? (
-          <p>You need to create an account</p>
+          <>
+            <NewUserForm />
+          </>
         ) : (
           <>
             { children }

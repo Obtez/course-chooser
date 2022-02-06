@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="System checks through NewUserWrapper.tsx if the user is already in the database.">
-      <change afterPath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/prisma.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/user/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="System now requires first and last name to be saved in the database before allowing the user to interact with protected routes&#10;- NewUserForm&#10;- api/user/id -&gt; POST request">
+      <change afterPath="$PROJECT_DIR$/components/NewUser/NewUserForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/hello.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/[id].ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -100,7 +95,7 @@
       <workItem from="1644094740176" duration="6803000" />
       <workItem from="1644174581700" duration="10000" />
       <workItem from="1644174724078" duration="1525000" />
-      <workItem from="1644176264570" duration="2455000" />
+      <workItem from="1644176264570" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -172,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644101557175</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="System checks through NewUserWrapper.tsx if the user is already in the database.">
+      <created>1644178839592</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1644178839592</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +202,7 @@
     <MESSAGE value="initialized courses.tsx page which is protected through auth0." />
     <MESSAGE value="Added footer with logout button to the layout component." />
     <MESSAGE value="System checks through NewUserWrapper.tsx if the user is already in the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="System checks through NewUserWrapper.tsx if the user is already in the database." />
+    <MESSAGE value="System now requires first and last name to be saved in the database before allowing the user to interact with protected routes&#10;- NewUserForm&#10;- api/user/id -&gt; POST request" />
+    <option name="LAST_COMMIT_MESSAGE" value="System now requires first and last name to be saved in the database before allowing the user to interact with protected routes&#10;- NewUserForm&#10;- api/user/id -&gt; POST request" />
   </component>
 </project>
