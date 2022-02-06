@@ -29,15 +29,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const userData = req.body;
 
+    console.log(userData.grade)
+
     const user = await prisma.user.create({
       data: {
         // @ts-ignore
         id: userID,
         firstName: userData.firstName,
         lastName: userData.lastName,
-        role: 'user',
+        role: 'student',
       }
     });
+
+    await prisma.student.create({
+      data: {
+        // @ts-ignore
+        id: userID,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        gradeID: userData.grade,
+      }
+    })
 
     if (user) {
       res.status(201).json(user);

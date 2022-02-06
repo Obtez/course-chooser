@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useUser } from "@auth0/nextjs-auth0";
+import {useUser} from "@auth0/nextjs-auth0";
 import NewUserForm from "../NewUser/NewUserForm";
+import { useRouter } from "next/router";
 
 type Props = {
   children: React.ReactNode;
@@ -8,10 +9,14 @@ type Props = {
 
 export default function NewUserWrapper({ children }: Props) {
   const [isNew, setIsNew] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const { user } = useUser();
+  const router = useRouter();
 
   useEffect(() => {
-    userIsStored();
+    if(isNew && isLoading) {
+      userIsStored();
+    }
   })
 
   async function userIsStored () {
@@ -28,8 +33,11 @@ export default function NewUserWrapper({ children }: Props) {
       const data = await res.json();
       if (data.message === 'User not found.') {
         setIsNew(true);
+        setIsLoading(false);
       } else {
         setIsNew(false);
+        setIsLoading(false);
+        router.push('/courses')
       }
     }
 
@@ -38,7 +46,10 @@ export default function NewUserWrapper({ children }: Props) {
   return (
     <div>
       {
-        isNew ? (
+        isLoading && <p>Loading</p>
+      }
+      {
+        !isLoading && isNew ? (
           <>
             <NewUserForm />
           </>
