@@ -19,6 +19,10 @@ export default function NewUserWrapper({ children }: Props) {
     }
   })
 
+  function toggleIsNew () {
+    setIsNew(false);
+  }
+
   async function userIsStored () {
     // @ts-ignore
     if (user && user.sub) {
@@ -51,7 +55,7 @@ export default function NewUserWrapper({ children }: Props) {
       {
         !isLoading && isNew ? (
           <>
-            <NewUserForm />
+            <NewUserForm toggleIsNew={toggleIsNew} />
           </>
         ) : (
           <>

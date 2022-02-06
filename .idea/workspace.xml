@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/NewUser/NewUserForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/NewUser/NewUserForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/[id].ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
       <workItem from="1644174581700" duration="10000" />
       <workItem from="1644174724078" duration="1525000" />
       <workItem from="1644176264570" duration="5633000" />
-      <workItem from="1644185650839" duration="2324000" />
+      <workItem from="1644185650839" duration="2492000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -182,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644180343856</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Student model to database - new users will be students for now">
+      <created>1644188108158</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1644188108158</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -8,6 +8,10 @@ type UserData = {
   grade: string;
 }
 
+type Props = {
+  toggleIsNew: () => void;
+}
+
 const emptyUserData: UserData = {
   firstName: '',
   lastName: '',
@@ -16,7 +20,7 @@ const emptyUserData: UserData = {
 
 const gradesArr: string[] = ['A1a', 'A1b', 'B1a', 'B1b', 'C1', 'A2a', 'A2b', 'B2a', 'B2b', 'C2', 'A3a', 'A3b', 'B3a', 'B3b', 'C3'];
 
-export default function NewUserForm() {
+export default function NewUserForm({toggleIsNew}: Props) {
   const [userData, setUserData] = useState<UserData>(emptyUserData);
   const [showError, setShowError] = useState<boolean>(false);
   const { user } = useUser();
@@ -54,6 +58,7 @@ export default function NewUserForm() {
     if (user) {
       setShowError(false);
       createUser()
+      toggleIsNew()
     }
   }
 
