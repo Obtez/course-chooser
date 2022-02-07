@@ -34,11 +34,21 @@
 
   &__applyBtn {
     padding: .5rem 1rem;
-    border: none;
+    border: 3px solid transparent;
     color: white;
     background-color: #407B40;
     border-radius: 4px;
+    font-weight: 700;
     cursor: pointer;
+
+    &--applied {
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 3px solid #407B40;
+      color: #407B40;
+      font-weight: 700;
+    }
 
     &:hover {
       background-color: #56a556;

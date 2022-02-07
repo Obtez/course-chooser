@@ -6,6 +6,8 @@ import CourseForm from "../components/Form/CourseForm";
 import CourseCard from "../components/Courses/CourseCard";
 
 export default function Courses(props: any) {
+  console.log(props.courses)
+
   return (
     <NewUserWrapper>
       <div className={styles.page__container}>
@@ -13,7 +15,23 @@ export default function Courses(props: any) {
         {/* <CourseForm userID={props.dbUser.id}/> */}
         <ul>
         {
-          props.courses.map((c:any) => <CourseCard key={c.id} course={c} userID={props.user.sub} />)
+          props.courses.allCourses.map((c:any) => {
+            const hasApplied = () => {
+              if (c.id === props.courses.topCourseID) return true;
+              if (c.id === props.courses.midCourseID) return true;
+              if (c.id === props.courses.lowCourseID) return true;
+              return false;
+            }
+
+          return (
+            <CourseCard
+              key={c.id}
+              course={c}
+              userID={props.user.sub}
+              hasApplied={hasApplied()}
+            />
+          )
+          })
         }
         </ul>
       </div>

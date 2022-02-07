@@ -4,6 +4,7 @@ import styles from './CourseCard.module.scss';
 export default function CourseCard(props: any) {
   const { course } = props;
   const { userID } = props;
+  const { hasApplied } = props;
 
   const convertedTimeSlot = () => {
     switch(course.timeSlot) {
@@ -31,13 +32,27 @@ export default function CourseCard(props: any) {
   }
 
   async function applyToCourse() {
-    const res = await fetch('http://localhost:3000/api/student/courses', {
+    const res = await fetch(`http://localhost:3000/api/student/courses/${userID}`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({userID, courseID: course.id})
-    })
+      body: JSON.stringify({courseID: course.id})
+    });
+    const data = await res.json();
+    console.log(data);
+  }
+
+  async function removeApplication() {
+    const res = await fetch(`http://localhost:3000/api/student/courses/${userID}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({courseID: course.id})
+    });
+    const data = await res.json();
+    console.log(data);
   }
 
   return (
@@ -48,6 +63,7 @@ export default function CourseCard(props: any) {
       </div>
       <div className={styles.card__body}>
         <p className={styles.card__content}>
+          {/* TODO display correct teacher name from database */}
           <span className={styles.card__teacher}>David Beer</span>
           {
             course.room && <span className={styles.card__room}>{' '}({course.room})</span>
@@ -56,7 +72,14 @@ export default function CourseCard(props: any) {
         <p className={styles.card__description}>{course.description}</p>
       </div>
       <div className={styles.card__footer}>
-        <button className={styles.card__applyBtn} type="button" onClick={applyToCourse}>Apply</button>
+        {/* TODO re-render page when update happened */}
+        {
+          hasApplied ? (
+            <button className={styles['card__applyBtn--applied']} type="button" onClick={removeApplication}>Already applied</button>
+          ) : (
+            <button className={styles.card__applyBtn} type="button" onClick={applyToCourse}>Apply</button>
+          )
+        }
       </div>
 
     </div>

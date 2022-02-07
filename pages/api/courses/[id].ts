@@ -6,24 +6,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method === 'GET') {
     const { id } = req.query;
 
-    const userRole = await prisma.user.findUnique({
-      where: {
-        // @ts-ignore
-        id: id,
-      },
-      select: {
-        role: true,
-      },
-    });
+    const userRole = await getUserRole(id.toString());
     if (!userRole) {
-      res.status(401).json({ message: 'No user or user role found.' })
+      return res.status(401).json({ message: 'No user or user role found.' })
     }
 
     if (userRole && userRole.role === 'admin') await getAdminCourses(id);
 
-    if(userRole && userRole.role === 'teacher') await getTeacherCourses(id);
+    if (userRole && userRole.role === 'teacher') await getTeacherCourses(id);
 
-    if(userRole && userRole.role === 'student') await getStudentCourses(id);
+    if (userRole && userRole.role === 'student') await getStudentCourses(id);
   }
 
   if (req.method === 'POST') {
@@ -47,14 +39,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
 
       if (result) {
-        res.status(200).json(course);
+        return res.status(200).json(course);
       } else {
-        res.status(401).json({message: 'There was an error creating the' +
+        return res.status(401).json({message: 'There was an error creating' +
+            ' the' +
             ' course.'})
       }
     }
     else {
-      res.status(301).json({message: 'You don\'t have the permission to' +
+      return res.status(301).json({message: 'You don\'t have the permission' +
+          ' to' +
           ' create courses.'})
     }
   }
@@ -76,9 +70,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   async function getAdminCourses(id: string | string[]) {
     const result = await prisma.course.findMany();
     if (result) {
-      res.status(200).json(result);
+      return res.status(200).json(result);
     } else {
-      res.status(401).json({message: 'No courses found'})
+      return res.status(401).json({message: 'No courses found'})
     }
   }
 
@@ -94,12 +88,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (teacherCourses || allCourses) {
       const result = { teacherCourses, allCourses };
-      res.status(200).json(result);
+      return res.status(200).json(result);
     } else {
-      res.status(401).json({message: 'No courses found'})
+      return res.status(401).json({message: 'No courses found'})
     }
 
   }
 
-  async function getStudentCourses(id: string | string[]) {}
+  async function getStudentCourses(id: string | string[]) {
+    const allCourses = await prisma.course.findMany();
+    const studentCourses = await prisma.student.findUnique({
+      where: {
+        id: id.toString(),
+      },
+      select: {
+        topCourseID: true,
+        midCourseID: true,
+        lowCourseID: true,
+      },
+    });
+
+    const result = {
+      allCourses: allCourses,
+      topCourseID: studentCourses?.topCourseID || '',
+      midCourseID: studentCourses?.midCourseID || '',
+      lowCourseID: studentCourses?.lowCourseID || '',
+    }
+
+    if (allCourses) {
+      return res.status(200).json(result);
+    } else {
+      return res.status(401).json({message: 'No courses found'})
+    }
+
+  }
 }
