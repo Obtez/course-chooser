@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import NewUserWrapper from "../components/Layout/NewUserWrapper";
-import {withPageAuthRequired} from "@auth0/nextjs-auth0";
+import {getSession, withPageAuthRequired} from "@auth0/nextjs-auth0";
 import { useUser } from "@auth0/nextjs-auth0";
+import AdminCourseList from "../components/Profile/AdminCourseList";
 
 type Course = {
   id: String;
@@ -23,54 +24,44 @@ const emptyUserData: UserData = {
   gradeID: '',
 }
 
-export default function Profile() {
-  const [courses, setCourses] = useState<any>([]);
-  const [userData, setUserData] = useState<UserData>(emptyUserData)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  const { user } = useUser();
-
-  useEffect(() => {
-    if (!courses.length) {
-      fetchCourses()
-    }
-  })
-
-  async function fetchCourses() {
-    if (!user) return null;
-    const res = await fetch(`http://localhost:3000/api/student/courses/${user.sub}`);
-    const data = await res.json();
-    console.log(data)
-    setCourses([data.topCourseID, data.midCourseID, data.lowCourseID])
-    setUserData({
-      firstName: data.firstName,
-      lastName: data.lastName,
-      gradeID: data.gradeID,
-    })
-    setIsLoading(false);
+export default function Profile(props: any) {
+  console.log(props.dbUser)
+  if (props.dbUser.role === 'admin') {
+    return (
+      <div>
+        <h1>All Courses</h1>
+        <AdminCourseList userID={props.dbUser.id} />
+      </div>
+    )
   }
 
   return (
     <NewUserWrapper>
       <div>
         <h1>Your Courses</h1>
-        <p>{userData.firstName} {userData.lastName} ({userData.gradeID})</p>
-        {
-          !isLoading && (
-            <ol>
-              {
-                courses.map((c: string) => (
-                  <li key={c}>
-                    <p>Priority: {c}</p>
-                  </li>
-                ))
-              }
-            </ol>
-          )
-        }
+
       </div>
     </NewUserWrapper>
   )
 }
 
-
-export const getServerSideProps = withPageAuthRequired();
+export const getServerSideProps = withPageAuthRequired({
+  getServerSideProps: async ({ req, res }) => {
+    const auth0User = getSession(req, res);
+    if (auth0User) {
+      const id = auth0User.user.sub;
+      const res = await fetch(`http://localhost:3000/api/user/${id}`);
+      const data = await res.json();
+      return {
+        props: {
+          dbUser: data,
+        },
+      };
+    }
+    return {
+      props: {
+        dbUser: null,
+      }
+    }
+  },
+});

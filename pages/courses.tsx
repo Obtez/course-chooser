@@ -3,7 +3,7 @@ import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import styles from '../styles/Courses.module.scss';
 import {getSession, withPageAuthRequired} from '@auth0/nextjs-auth0';
 
-function Courses(props: any) {
+export default function Courses(props: any) {
   // role: student OR no user found
   return (
     <NewUserWrapper>
@@ -14,8 +14,6 @@ function Courses(props: any) {
   )
 }
 
-export default withPageAuthRequired(Courses);
-
 export const getServerSideProps = withPageAuthRequired({
   getServerSideProps: async ({ req, res }) => {
     const auth0User = getSession(req, res);
@@ -23,7 +21,6 @@ export const getServerSideProps = withPageAuthRequired({
       const id = auth0User.user.sub;
       const res = await fetch(`http://localhost:3000/api/user/${id}`);
       const data = await res.json();
-      console.log(data)
       return {
         props: {
           dbUser: data,
