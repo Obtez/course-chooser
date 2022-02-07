@@ -29,6 +29,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           res.status(200).json(adminUser);
           break;
 
+        case 'teacher':
+          const teacherUser = await prisma.teacher.findUnique({
+            where: {
+              // @ts-ignore
+              id: userID,
+            },
+          })
+          res.status(200).json({...teacherUser, role: 'teacher'})
+          break;
+
         case 'student':
           const studentUser = await prisma.student.findUnique({
             where: {
@@ -36,7 +46,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               id: userID,
             },
           })
-          res.status(200).json(studentUser);
+          res.status(200).json({...studentUser, role: 'student'});
           break;
 
         default:

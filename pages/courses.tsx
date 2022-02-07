@@ -1,10 +1,10 @@
 import React from 'react';
 import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import styles from '../styles/Courses.module.scss';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import {getSession, withPageAuthRequired} from '@auth0/nextjs-auth0';
 
 function Courses(props: any) {
-  console.log(props)
+  // role: student OR no user found
   return (
     <NewUserWrapper>
       <div className={styles.page__container}>
@@ -16,12 +16,24 @@ function Courses(props: any) {
 
 export default withPageAuthRequired(Courses);
 
-export async function getServerSideProps(context: any) {
-  console.log(context)
-  return {
-    props: {
-      role: 'hi'
+export const getServerSideProps = withPageAuthRequired({
+  getServerSideProps: async ({ req, res }) => {
+    const auth0User = getSession(req, res);
+    if (auth0User) {
+      const id = auth0User.user.sub;
+      const res = await fetch(`http://localhost:3000/api/user/${id}`);
+      const data = await res.json();
+      console.log(data)
+      return {
+        props: {
+          dbUser: data,
+        },
+      };
     }
-  }
-}
-
+    return {
+      props: {
+        dbUser: null,
+      }
+    }
+  },
+});
