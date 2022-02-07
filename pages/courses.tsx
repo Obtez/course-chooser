@@ -3,7 +3,8 @@ import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import styles from '../styles/Courses.module.scss';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-export default function Courses() {
+function Courses(props: any) {
+  console.log(props)
   return (
     <NewUserWrapper>
       <div className={styles.page__container}>
@@ -13,4 +14,14 @@ export default function Courses() {
   )
 }
 
-export const getServerSideProps = withPageAuthRequired();
+export default withPageAuthRequired(Courses);
+
+export async function getServerSideProps(context: any) {
+  console.log(context)
+  return {
+    props: {
+      role: 'hi'
+    }
+  }
+}
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {useUser} from "@auth0/nextjs-auth0";
 import NewUserForm from "../NewUser/NewUserForm";
 
@@ -66,7 +66,6 @@ export default function NewUserWrapper({ children }: Props) {
       })
 
       const data = await res.json();
-      console.log(data)
       if (data.message === 'User not found.') {
         setIsNew(true);
         setIsLoading(false);

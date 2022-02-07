@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default function Layout({children}: Props) {
-
   return (<div>
       <Head>
         <title>Create Next App</title>

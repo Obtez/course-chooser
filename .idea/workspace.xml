@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]">
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="NewUserWrapper now checks if the user's role is admin, teacher, or student">
+      <change afterPath="$PROJECT_DIR$/pages/courses/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -99,7 +100,7 @@
       <workItem from="1644176264570" duration="5633000" />
       <workItem from="1644185650839" duration="4605000" />
       <workItem from="1644218714802" duration="436000" />
-      <workItem from="1644223442405" duration="1154000" />
+      <workItem from="1644223442405" duration="4395000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -206,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644190149781</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="NewUserWrapper now checks if the user's role is admin, teacher, or student">
+      <created>1644224681355</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1644224681355</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +246,7 @@
     <MESSAGE value="Added Student model to database - new users will be students for now" />
     <MESSAGE value="Creating new user now correctly re-renders page" />
     <MESSAGE value="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]" />
+    <MESSAGE value="NewUserWrapper now checks if the user's role is admin, teacher, or student" />
+    <option name="LAST_COMMIT_MESSAGE" value="NewUserWrapper now checks if the user's role is admin, teacher, or student" />
   </component>
 </project>
