@@ -17,6 +17,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         topCourseID: true,
         midCourseID: true,
         lowCourseID: true,
+        firstName: true,
+        lastName: true,
+        gradeID: true,
       },
     });
 

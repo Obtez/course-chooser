@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="Creating new user now correctly re-renders page">
-      <change afterPath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20220206223617_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20220206230510_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/NewUserWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/[id].ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +97,9 @@
       <workItem from="1644174581700" duration="10000" />
       <workItem from="1644174724078" duration="1525000" />
       <workItem from="1644176264570" duration="5633000" />
-      <workItem from="1644185650839" duration="4257000" />
+      <workItem from="1644185650839" duration="4605000" />
+      <workItem from="1644218714802" duration="436000" />
+      <workItem from="1644223442405" duration="1154000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -199,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644188379716</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]">
+      <created>1644190149781</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1644190149781</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +237,7 @@
     <MESSAGE value="System now requires first and last name to be saved in the database before allowing the user to interact with protected routes&#10;- NewUserForm&#10;- api/user/id -&gt; POST request" />
     <MESSAGE value="Added Student model to database - new users will be students for now" />
     <MESSAGE value="Creating new user now correctly re-renders page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating new user now correctly re-renders page" />
+    <MESSAGE value="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]" />
   </component>
 </project>

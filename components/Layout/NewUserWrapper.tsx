@@ -6,8 +6,41 @@ type Props = {
   children: React.ReactNode;
 }
 
+type Student = {
+  firstName: string;
+  lastName: string;
+  gradeID: string;
+  role: string;
+  topCourseID: string;
+  midCourseID: string;
+  lowCourseID: string;
+}
+
+type Admin = {
+  firstName: string;
+  lastName: string;
+  role: string;
+}
+
+type Teacher = {
+  firstName: string;
+  lastName: string;
+  gradeID: string;
+  role: string;
+  courseID: string;
+}
+
+type UserData = Admin | Teacher | Student;
+
+const emptyUserData: UserData = {
+  firstName: '',
+  lastName: '',
+  role: '',
+};
+
 export default function NewUserWrapper({ children }: Props) {
   const [isNew, setIsNew] = useState<boolean>(true);
+  const [userData, setUserData] = useState<UserData>(emptyUserData);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { user } = useUser();
 
@@ -33,10 +66,12 @@ export default function NewUserWrapper({ children }: Props) {
       })
 
       const data = await res.json();
+      console.log(data)
       if (data.message === 'User not found.') {
         setIsNew(true);
         setIsLoading(false);
       } else {
+        setUserData({...data});
         setIsNew(false);
         setIsLoading(false);
       }

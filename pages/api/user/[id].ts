@@ -5,21 +5,46 @@ import prisma from "../../../lib/prisma";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     const userID = req.query.id;
-    console.log(userID);
     if (!userID) res.status(301).json({message: 'User not found.'})
 
-    const user = await prisma.user.findUnique({
+    const userRole = await prisma.user.findUnique({
       where: {
         // @ts-ignore
         id: userID,
+      },
+      select: {
+        role: true,
       }
     })
 
-    if (user) {
-      res.status(200).json({message: 'User found.'})
+    if (userRole) {
+      switch (userRole.role) {
+        case 'admin':
+          const adminUser = await prisma.user.findUnique({
+            where: {
+              // @ts-ignore
+              id: userID,
+            },
+          })
+          res.status(200).json(adminUser);
+          break;
+
+        case 'student':
+          const studentUser = await prisma.student.findUnique({
+            where: {
+              // @ts-ignore
+              id: userID,
+            },
+          })
+          res.status(200).json(studentUser);
+          break;
+
+        default:
+          res.status(400).json({ message: 'Error finding role' })
+      }
     }
 
-    if (!user) res.status(301).json({message: 'User not found.'})
+    if (!userRole) res.status(301).json({message: 'User not found.'})
   }
 
   if (req.method === 'POST') {
