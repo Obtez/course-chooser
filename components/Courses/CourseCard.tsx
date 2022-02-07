@@ -6,6 +6,7 @@ export default function CourseCard(props: any) {
 
   const { course } = props;
   const { userID } = props;
+  const { toggleModal } = props;
 
   const convertedTimeSlot = () => {
     switch(course.timeSlot) {
@@ -74,7 +75,10 @@ export default function CourseCard(props: any) {
         {/* TODO re-render page when update happened */}
         {
           applied ? (
+            <>
+            <button className={styles.card__applyBtn} type="button" onClick={toggleModal}>Toggle Modal</button>
             <button className={styles['card__applyBtn--applied']} type="button" onClick={removeApplication}>Already applied</button>
+            </>
           ) : (
             <button className={styles.card__applyBtn} type="button" onClick={applyToCourse}>Apply</button>
           )
