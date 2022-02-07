@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="created CourseCard.tsx which shows most of the information of each course&#10;&#10;missing: teacherID to teacherName conversion">
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="CourseCard.tsx now shows which courses someone has applied to&#10;&#10;-&gt; proof of concept: only saves to topCourseID for now and does not re-render page on click">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Courses/CourseCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Courses/CourseCard.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Courses/CourseCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Courses/CourseCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/courses/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
       <workItem from="1644229023902" duration="625000" />
       <workItem from="1644229658210" duration="2019000" />
       <workItem from="1644247397432" duration="1744000" />
-      <workItem from="1644254900078" duration="10696000" />
+      <workItem from="1644254900078" duration="10953000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -255,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644261224185</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="CourseCard.tsx now shows which courses someone has applied to&#10;&#10;-&gt; proof of concept: only saves to topCourseID for now and does not re-render page on click">
+      <created>1644265980392</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1644265980392</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +295,7 @@
     <MESSAGE value="implemented AdminCourseList - backend still checks if user has role of admin in the database" />
     <MESSAGE value="added a few courses to database and am now loading them in courses.tsx page" />
     <MESSAGE value="created CourseCard.tsx which shows most of the information of each course&#10;&#10;missing: teacherID to teacherName conversion" />
-    <option name="LAST_COMMIT_MESSAGE" value="created CourseCard.tsx which shows most of the information of each course&#10;&#10;missing: teacherID to teacherName conversion" />
+    <MESSAGE value="CourseCard.tsx now shows which courses someone has applied to&#10;&#10;-&gt; proof of concept: only saves to topCourseID for now and does not re-render page on click" />
+    <option name="LAST_COMMIT_MESSAGE" value="CourseCard.tsx now shows which courses someone has applied to&#10;&#10;-&gt; proof of concept: only saves to topCourseID for now and does not re-render page on click" />
   </component>
 </project>

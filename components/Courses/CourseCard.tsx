@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CourseCard.module.scss';
 
 export default function CourseCard(props: any) {
+  const [applied, setApplied] = useState<boolean>(props.hasApplied)
+
   const { course } = props;
   const { userID } = props;
-  const { hasApplied } = props;
 
   const convertedTimeSlot = () => {
     switch(course.timeSlot) {
@@ -39,8 +40,7 @@ export default function CourseCard(props: any) {
       },
       body: JSON.stringify({courseID: course.id})
     });
-    const data = await res.json();
-    console.log(data);
+    if (res.ok) setApplied(!applied);
   }
 
   async function removeApplication() {
@@ -51,8 +51,7 @@ export default function CourseCard(props: any) {
       },
       body: JSON.stringify({courseID: course.id})
     });
-    const data = await res.json();
-    console.log(data);
+    if (res.ok) setApplied(!applied);
   }
 
   return (
@@ -74,7 +73,7 @@ export default function CourseCard(props: any) {
       <div className={styles.card__footer}>
         {/* TODO re-render page when update happened */}
         {
-          hasApplied ? (
+          applied ? (
             <button className={styles['card__applyBtn--applied']} type="button" onClick={removeApplication}>Already applied</button>
           ) : (
             <button className={styles.card__applyBtn} type="button" onClick={applyToCourse}>Apply</button>
