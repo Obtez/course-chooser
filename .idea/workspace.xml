@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="implemented AdminCourseList - backend still checks if user has role of admin in the database">
-      <change afterPath="$PROJECT_DIR$/components/Form/CourseForm.tsx" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="added a few courses to database and am now loading them in courses.tsx page">
+      <change afterPath="$PROJECT_DIR$/components/Courses/CourseCard.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/courses/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Courses/CourseCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Courses/CourseCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -107,7 +103,7 @@
       <workItem from="1644229023902" duration="625000" />
       <workItem from="1644229658210" duration="2019000" />
       <workItem from="1644247397432" duration="1744000" />
-      <workItem from="1644254900078" duration="3509000" />
+      <workItem from="1644254900078" duration="6101000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -242,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644231676784</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added a few courses to database and am now loading them in courses.tsx page">
+      <created>1644258554026</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1644258554026</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +281,7 @@
     <MESSAGE value="Courses page gets user role through serversideprops now" />
     <MESSAGE value="Teacher model added to database - /api/users/[id] now detects which role the user has" />
     <MESSAGE value="implemented AdminCourseList - backend still checks if user has role of admin in the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented AdminCourseList - backend still checks if user has role of admin in the database" />
+    <MESSAGE value="added a few courses to database and am now loading them in courses.tsx page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a few courses to database and am now loading them in courses.tsx page" />
   </component>
 </project>

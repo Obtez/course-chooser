@@ -3,6 +3,7 @@ import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import styles from '../styles/Courses.module.scss';
 import {getSession, withPageAuthRequired} from '@auth0/nextjs-auth0';
 import CourseForm from "../components/Form/CourseForm";
+import CourseCard from "../components/Courses/CourseCard";
 
 export default function Courses(props: any) {
   return (
@@ -12,7 +13,7 @@ export default function Courses(props: any) {
         {/* <CourseForm userID={props.dbUser.id}/> */}
         <ul>
         {
-          props.courses.map((c:any) => <li key={c.id}>{c.title}</li>)
+          props.courses.map((c:any) => <CourseCard key={c.id} course={c} userID={props.user.sub} />)
         }
         </ul>
       </div>
