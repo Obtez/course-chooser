@@ -3,6 +3,7 @@ import NewUserWrapper from "../components/Layout/NewUserWrapper";
 import {getSession, withPageAuthRequired} from "@auth0/nextjs-auth0";
 import { useUser } from "@auth0/nextjs-auth0";
 import AdminCourseList from "../components/Profile/AdminCourseList";
+import TeacherCourseList from "../components/Profile/TeacherCourseList";
 
 type Course = {
   id: String;
@@ -29,8 +30,15 @@ export default function Profile(props: any) {
   if (props.dbUser.role === 'admin') {
     return (
       <div>
-        <h1>All Courses</h1>
         <AdminCourseList userID={props.dbUser.id} />
+      </div>
+    )
+  }
+
+  if (props.dbUser.role === 'teacher') {
+    return (
+      <div>
+        <TeacherCourseList userID={props.dbUser.id} />
       </div>
     )
   }

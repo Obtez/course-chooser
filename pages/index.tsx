@@ -24,7 +24,7 @@ export default function Home() {
 
     <div className={styles.btn__container}>
       <AnchorLink href={'/courses'} variant={'primary'}>All Courses</AnchorLink>
-      <AnchorLink href={'/profile'} variant={'secondary'}>Your Courses</AnchorLink>
+      <AnchorLink href={'/profile'} variant={'secondary'}>Profile</AnchorLink>
     </div>
     </div>)
 }
