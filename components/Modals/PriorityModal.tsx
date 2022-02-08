@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './Modal.module.scss';
 
 export default function PriorityModal(props: any) {
@@ -7,10 +7,6 @@ export default function PriorityModal(props: any) {
     midPriority: { ...props.priorities.midPriority },
     lowPriority: { ...props.priorities.lowPriority },
   })
-
-  useEffect(() => {
-    console.log(currPriorities)
-  }, [currPriorities])
 
   function setTopPriority() {
     setCurrPriorities({
