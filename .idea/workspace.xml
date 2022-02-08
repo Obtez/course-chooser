@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="removed bug where it wouldn't display courses in courses.tsx">
-      <change afterPath="$PROJECT_DIR$/lib/api/apiErrors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/api/courseHelper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/api/userHelper.ts" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="removed unused useEffect">
+      <change afterPath="$PROJECT_DIR$/hooks/useUpdateCourses.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/student/courses/update/[id].ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/courses/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <workItem from="1644296452531" duration="1938000" />
       <workItem from="1644320872268" duration="439000" />
       <workItem from="1644348297856" duration="45000" />
-      <workItem from="1644348353660" duration="1653000" />
+      <workItem from="1644348353660" duration="3871000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -295,7 +294,35 @@
       <option name="project" value="LOCAL" />
       <updated>1644348997218</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="extracted helper functions from api/courses/[id].ts to helper directory in lib">
+      <created>1644350123359</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1644350123359</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added absolute import to tsconfig.json">
+      <created>1644352070091</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1644352070091</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added wrongRequestMethodError helper">
+      <created>1644352123913</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1644352123913</updated>
+    </task>
+    <task id="LOCAL-00030" summary="removed old comment">
+      <created>1644352172570</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1644352172570</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,11 +340,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="project initialized" />
-    <MESSAGE value="globals.scss -&gt; full height for whole page" />
-    <MESSAGE value="cleared readme.md" />
-    <MESSAGE value="added auth0" />
-    <MESSAGE value="responsive styling for navbar" />
     <MESSAGE value="Extracted navbar link items into atomic components (anchorlinks)" />
     <MESSAGE value="basic homepage&#10;AnchorLink now has variants =primary =secondary" />
     <MESSAGE value="initialized courses.tsx page which is protected through auth0." />
@@ -338,6 +360,11 @@
     <MESSAGE value="created PriorityModal which will soon have some actual functionality" />
     <MESSAGE value="created protected (admin, teacher) dashboard/overview router - will later have CSV download functionality" />
     <MESSAGE value="removed bug where it wouldn't display courses in courses.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed bug where it wouldn't display courses in courses.tsx" />
+    <MESSAGE value="extracted helper functions from api/courses/[id].ts to helper directory in lib" />
+    <MESSAGE value="added absolute import to tsconfig.json" />
+    <MESSAGE value="added wrongRequestMethodError helper" />
+    <MESSAGE value="removed old comment" />
+    <MESSAGE value="removed unused useEffect" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unused useEffect" />
   </component>
 </project>
