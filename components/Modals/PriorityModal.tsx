@@ -1,24 +1,39 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Modal.module.scss';
 
 export default function PriorityModal(props: any) {
-  const [topPriority, setTopPriority] = useState<any>();
-  const [midPriority, setMidPriority] = useState<any>();
-  const [lowPriority, setLowPriority] = useState<any>();
+  const [currPriorities, setCurrPriorities] = useState<any>({
+    topPriority: { ...props.priorities.topPriority },
+    midPriority: { ...props.priorities.midPriority },
+    lowPriority: { ...props.priorities.lowPriority },
+  })
 
-  const newPriority = props.newPriority;
+  useEffect(() => {
+    console.log(currPriorities)
+  }, [currPriorities])
 
-  async function overwritePriority(oldCourseID: string, newCourseID: string) {
-    console.log('old', oldCourseID);
-    console.log('new', newCourseID);
-    return null
+  function setTopPriority() {
+    setCurrPriorities({
+      topPriority: {...props.newPriority},
+      midPriority: () => currPriorities.midPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.midPriority,
+      lowPriority: () => currPriorities.lowPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.lowPriority,
+    });
   }
 
-  async function updatePriorities() {
-    console.log('top', topPriority);
-    console.log('mid', midPriority);
-    console.log('low', lowPriority);
-    return null;
+  function setMidPriority() {
+    setCurrPriorities({
+      midPriority: {...props.newPriority},
+      topPriority: () => currPriorities.topPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.topPriority,
+      lowPriority: () => currPriorities.lowPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.lowPriority,
+    });
+  }
+
+  function setLowPriority() {
+    setCurrPriorities({
+      lowPriority: {...props.newPriority},
+      midPriority: () => currPriorities.midPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.midPriority,
+      topPriority: () => currPriorities.topPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.topPriority,
+    });
   }
 
   return (
@@ -29,24 +44,30 @@ export default function PriorityModal(props: any) {
       <div className={styles.modal__body}>
         <ol className={styles.modal__list}>
           <li className={styles.modal__list__item}>
-            <span>Priority:</span>
-            <span>{ topPriority || '' }</span>
-            <button type="button" onClick={() => overwritePriority(topPriority, newPriority)}>Overwrite</button>
+            <div className={styles.modal__list__left}>
+              <span>1. Priority:</span>
+              <span className={styles.modal__course__title}>{ currPriorities.topPriority.title || 'Nothing here' }</span>
+            </div>
+            <button type="button" onClick={setTopPriority}>X</button>
           </li>
           <li className={styles.modal__list__item}>
-            <span>Priority:</span>
-            <span>{ midPriority || '' }</span>
-            <button type="button" onClick={() => overwritePriority(midPriority, newPriority)}>Overwrite</button>
+            <div className={styles.modal__list__left}>
+              <span>2. Priority:</span>
+              <span className={styles.modal__course__title}>{ currPriorities.midPriority.title || 'Nothing here' }</span>
+            </div>
+            <button type="button" onClick={setMidPriority}>X</button>
           </li>
           <li className={styles.modal__list__item}>
-            <span>Priority:</span>
-            <span>{ lowPriority || '' }</span>
-            <button type="button" onClick={() => overwritePriority(lowPriority, newPriority)}>Overwrite</button>
+            <div className={styles.modal__list__left}>
+              <span>3. Priority:</span>
+              <span className={styles.modal__course__title}>{ currPriorities.lowPriority.title || 'Nothing here' }</span>
+            </div>
+            <button type="button" onClick={setLowPriority}>X</button>
           </li>
         </ol>
       </div>
       <div className={styles.modal__footer}>
-        <button className={styles.modal__saveBtn} type="button" onClick={updatePriorities}>Save</button>
+        <button className={styles.modal__saveBtn} type="button">Save</button>
         <button className={styles.modal__saveBtn} type="button" onClick={props.toggleModal}>Close without Saving</button>
       </div>
     </div>

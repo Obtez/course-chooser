@@ -26,7 +26,17 @@
     gap: 1em;
   }
 
-  &__list__item {}
+  &__list__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__course__title {}
 
   &__footer {
     display: flex;

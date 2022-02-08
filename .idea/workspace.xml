@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="applying to a course on CourseCard.tsx now re-renders component correctly.">
-      <change afterPath="$PROJECT_DIR$/components/Modals/Modal.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="created PriorityModal which will soon have some actual functionality">
+      <change afterPath="$PROJECT_DIR$/components/CSV/CSV.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/404.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/csv/create.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/dashboard/overview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Courses/CourseCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Courses/CourseCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Modals/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Modals/Modal.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -104,7 +110,9 @@
       <workItem from="1644229023902" duration="625000" />
       <workItem from="1644229658210" duration="2019000" />
       <workItem from="1644247397432" duration="1744000" />
-      <workItem from="1644254900078" duration="12763000" />
+      <workItem from="1644254900078" duration="17786000" />
+      <workItem from="1644274284611" duration="257000" />
+      <workItem from="1644296452531" duration="1817000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -267,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644266188085</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="created PriorityModal which will soon have some actual functionality">
+      <created>1644268004144</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1644268004144</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +322,7 @@
     <MESSAGE value="created CourseCard.tsx which shows most of the information of each course&#10;&#10;missing: teacherID to teacherName conversion" />
     <MESSAGE value="CourseCard.tsx now shows which courses someone has applied to&#10;&#10;-&gt; proof of concept: only saves to topCourseID for now and does not re-render page on click" />
     <MESSAGE value="applying to a course on CourseCard.tsx now re-renders component correctly." />
-    <option name="LAST_COMMIT_MESSAGE" value="applying to a course on CourseCard.tsx now re-renders component correctly." />
+    <MESSAGE value="created PriorityModal which will soon have some actual functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="created PriorityModal which will soon have some actual functionality" />
   </component>
 </project>

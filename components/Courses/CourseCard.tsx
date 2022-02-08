@@ -76,11 +76,11 @@ export default function CourseCard(props: any) {
         {
           applied ? (
             <>
-            <button className={styles.card__applyBtn} type="button" onClick={toggleModal}>Toggle Modal</button>
+            <button className={styles.card__applyBtn} type="button" onClick={() => toggleModal(course.id)}>Toggle Modal</button>
             <button className={styles['card__applyBtn--applied']} type="button" onClick={removeApplication}>Already applied</button>
             </>
           ) : (
-            <button className={styles.card__applyBtn} type="button" onClick={applyToCourse}>Apply</button>
+            <button className={styles.card__applyBtn} type="button" onClick={() => toggleModal({id: course.id, title: course.title})}>Apply</button>
           )
         }
       </div>

@@ -8,15 +8,40 @@ import PriorityModal from "../components/Modals/PriorityModal";
 
 export default function Courses(props: any) {
   const [showModal, setShowModal] = useState<boolean>(false)
+  const [newPriority, setNewPriority] = useState<string>('')
 
-  function toggleModal() {
+  function toggleModal(newPriorityID: string) {
     setShowModal(!showModal);
+    setNewPriority(newPriorityID);
+  }
+
+  function matchCourseTitle(courseID: string) {
+    if (!courseID) return { id: '', title: '' };
+    const course = props.courses.allCourses.find((c: any) => c.id === courseID);
+    if (course) {
+      return {
+        title: course.title,
+        id: courseID,
+      };
+    }
+  }
+
+  function createPriorities() {
+    return {
+      topPriority: matchCourseTitle(props.courses.topCourseID),
+      midPriority: matchCourseTitle(props.courses.midCourseID),
+      lowPriority: matchCourseTitle(props.courses.lowCourseID),
+    }
   }
 
   return (
     <NewUserWrapper>
       <div className={styles.page__container}>
-        {showModal && <PriorityModal toggleModal={toggleModal} />}
+        {showModal && <PriorityModal
+            toggleModal={toggleModal}
+            priorities={createPriorities()}
+            newPriority={newPriority}
+        />}
         <h1>All Courses</h1>
         {/* <CourseForm userID={props.dbUser.id}/> */}
         <ul>
