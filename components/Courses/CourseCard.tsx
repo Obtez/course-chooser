@@ -4,6 +4,8 @@ import styles from './CourseCard.module.scss';
 export default function CourseCard(props: any) {
   const [applied, setApplied] = useState<boolean>(props.hasApplied)
 
+  if (!props.course) return null;
+
   const { course } = props;
   const { userID } = props;
   const { toggleModal } = props;
