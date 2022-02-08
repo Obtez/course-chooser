@@ -10,7 +10,7 @@ interface Course {
   description: string;
   room: string;
   timeSlot: TimeSlot;
-};
+}
 
 const emptyCourse: Course = {
   id: '',
@@ -36,7 +36,7 @@ class Course {
     this.id = uuidv4();
     this.teacherID = teacherID;
   }
-};
+}
 
 type Props = {
   userID: string;
@@ -58,7 +58,7 @@ export default function CourseForm({ userID }: Props) {
     const {title, description, room, timeSlot} = course;
     const newCourse = new Course(title, description, room, timeSlot, userID);
 
-    const res = await fetch(`http://localhost:3000/api/courses/${userID}`,{
+    const res = await fetch(`http://localhost:3000/api/courses/add/${userID}`,{
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

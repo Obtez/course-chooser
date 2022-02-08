@@ -1,6 +1,7 @@
 import prisma from "../prisma";
-import {NextApiResponse} from "next";
+import {NextApiRequest, NextApiResponse} from "next";
 import {notFoundError} from "./apiErrors";
+import {getUserRole} from "./userHelper";
 
 export async function getAdminCourses(id: string, res: NextApiResponse) {
   const result = await prisma.course.findMany();
@@ -53,5 +54,44 @@ export async function getStudentCourses(id: string, res: NextApiResponse) {
     return res.status(200).json(result);
   } else {
     notFoundError(res, 'No courses found.')
+  }
+}
+
+export async function addCourse(req: NextApiRequest, res: NextApiResponse) {
+  const userID = req.query.id.toString();
+  const course = req.body;
+
+  const userRole = await getUserRole(userID);
+  if (userRole === null) return res.status(401).json({
+    message: 'User not' +
+      ' found'
+  })
+  if (userRole.role === 'teacher' || userRole.role === 'admin') {
+    const result = await prisma.course.create({
+      data: {
+        id: course.id,
+        title: course.title,
+        description: course.description,
+        room: course.room,
+        teacherID: course.teacherID,
+        timeSlot: course.timeSlot,
+      },
+    });
+
+    if (result) {
+      return res.status(200).json(course);
+    } else {
+      return res.status(401).json({
+        message: 'There was an error creating' +
+          ' the' +
+          ' course.'
+      })
+    }
+  } else {
+    return res.status(301).json({
+      message: 'You don\'t have the permission' +
+        ' to' +
+        ' create courses.'
+    })
   }
 }
