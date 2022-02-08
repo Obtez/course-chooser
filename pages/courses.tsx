@@ -9,9 +9,7 @@ import PriorityModal from "../components/Modals/PriorityModal";
 export default function Courses(props: any) {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [newPriority, setNewPriority] = useState<string>('')
-
-  console.log(props.courses)
-
+  
   function toggleModal(newPriorityID: string) {
     setShowModal(!showModal);
     setNewPriority(newPriorityID);
