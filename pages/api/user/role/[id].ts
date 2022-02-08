@@ -2,8 +2,8 @@ import {NextApiRequest, NextApiResponse} from "next";
 import {
   checkIfProvided, notFoundError,
   wrongRequestMethodError
-} from "../../../../lib/api/apiErrors";
-import {getUserRole} from "../../../../lib/api/userHelper";
+} from "lib/api/apiErrors";
+import {getUserRole} from "lib/api/userHelper";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const id = req.query.id.toString();
