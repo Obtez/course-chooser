@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import prisma from "../../../../lib/prisma";
+import prisma from "lib/prisma";
+import {notFoundError} from "lib/api/apiErrors";
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -69,12 +70,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const userID = req.query.id;
     const { courseID } = req.body;
 
-    if (!userID || !courseID) return res.status(401).json({
-      message: 'User' +
-        ' or course not found.'
-    });
+    if (!userID) {
+      notFoundError(res, 'No user ID provided.');
+    }
 
-    if (userID || courseID) {
+    if (!courseID) {
+      notFoundError(res, 'No course ID provided.');
+    }
+
       const appliedCourses = await prisma.student.findUnique({
         where: {
           id: userID.toString(),
@@ -118,7 +121,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } else {
         return res.status(401).json({ message: 'Could not save changes.' })
       }
-    }
   }
 
   async function getUserRole(id: string) {
@@ -133,6 +135,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
   }
-
-
 }
