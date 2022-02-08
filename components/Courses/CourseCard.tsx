@@ -33,17 +33,6 @@ export default function CourseCard(props: any) {
     }
   }
 
-  async function applyToCourse() {
-    const res = await fetch(`http://localhost:3000/api/student/courses/${userID}`, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({courseID: course.id})
-    });
-    if (res.ok) setApplied(!applied);
-  }
-
   async function removeApplication() {
     const res = await fetch(`http://localhost:3000/api/student/courses/${userID}`, {
       method: 'PUT',
@@ -72,7 +61,6 @@ export default function CourseCard(props: any) {
         <p className={styles.card__description}>{course.description}</p>
       </div>
       <div className={styles.card__footer}>
-        {/* TODO re-render page when update happened */}
         {
           applied ? (
             <>
