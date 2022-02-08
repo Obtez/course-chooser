@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from "next/link";
 import {getSession, withPageAuthRequired} from "@auth0/nextjs-auth0";
-import CSV from "../../components/CSV/CSV";
 
 export default function Overview(props: any) {
   if (!props.userData || props.userData.role === 'student') {
@@ -19,7 +18,6 @@ export default function Overview(props: any) {
       {
         props.courses.map((c: any) => <li key={c.id}>{ c.title }</li>)
       }
-      <CSV courses={props.courses} />
     </div>
   )
 }

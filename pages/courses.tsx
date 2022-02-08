@@ -10,6 +10,8 @@ export default function Courses(props: any) {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [newPriority, setNewPriority] = useState<string>('')
 
+  console.log(props.courses)
+
   function toggleModal(newPriorityID: string) {
     setShowModal(!showModal);
     setNewPriority(newPriorityID);
@@ -46,7 +48,7 @@ export default function Courses(props: any) {
         {/* <CourseForm userID={props.dbUser.id}/> */}
         <ul>
         {
-          props.courses.allCourses.map((c:any) => {
+          props.courses.map((c:any) => {
             const hasApplied = () => {
               if (c.id === props.courses.topCourseID) return true;
               if (c.id === props.courses.midCourseID) return true;

@@ -69,6 +69,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   async function getAdminCourses(id: string | string[]) {
     const result = await prisma.course.findMany();
+    console.log(result);
     if (result) {
       return res.status(200).json(result);
     } else {
