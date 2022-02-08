@@ -8,6 +8,9 @@ export default function PriorityModal(props: any) {
     lowPriority: { ...props.priorities.lowPriority },
   })
 
+  const userID = props.userID.toString();
+
+  // TODO doesnt work when applying to different courses
   function setTopPriority() {
     setCurrPriorities({
       topPriority: {...props.newPriority},
@@ -30,6 +33,20 @@ export default function PriorityModal(props: any) {
       midPriority: () => currPriorities.midPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.midPriority,
       topPriority: () => currPriorities.topPriority.id === props.newPriority.id ? { id: '', title: '' } : currPriorities.topPriority,
     });
+  }
+
+  // TODO re-render page
+  async function updateCoursesInDB() {
+    const res = await fetch(`http://localhost:3000/api/student/courses/update/${userID}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(currPriorities),
+    });
+
+    const data = await res.json();
+    console.log(data);
   }
 
   return (
@@ -63,7 +80,10 @@ export default function PriorityModal(props: any) {
         </ol>
       </div>
       <div className={styles.modal__footer}>
-        <button className={styles.modal__saveBtn} type="button">Save</button>
+        <button
+          className={styles.modal__saveBtn}
+          type="button"
+          onClick={updateCoursesInDB}>Save</button>
         <button className={styles.modal__saveBtn} type="button" onClick={props.toggleModal}>Close without Saving</button>
       </div>
     </div>
