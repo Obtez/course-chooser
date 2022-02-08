@@ -11,3 +11,19 @@ export async function getUserRole(id: string) {
   });
 }
 
+export async function getUserById(id: string) {
+  return await prisma.student.findUnique({
+    where: {
+      id: id,
+    },
+    select: {
+      topCourseID: true,
+      midCourseID: true,
+      lowCourseID: true,
+      firstName: true,
+      lastName: true,
+      gradeID: true,
+    },
+  });
+}
+
