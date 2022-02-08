@@ -18,3 +18,7 @@ export function wrongRequestMethodError(res: NextApiResponse) {
 export function updateFailedError(res: NextApiResponse, execType: string, reason: string) {
   return res.status(500).json({ message: `${execType} failed: ${reason}.` });
 }
+
+export function forbiddenError(res: NextApiResponse) {
+  return res.status(403).json({ message: `Request forbidden.` });
+}
