@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="removed unused useEffect">
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="included some TODOs for persisting bugs">
       <change afterPath="$PROJECT_DIR$/hooks/useUpdateCourses.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/student/courses/update/[id].ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Modals/PriorityModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/student/courses/[id].ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -110,7 +107,7 @@
       <workItem from="1644296452531" duration="1938000" />
       <workItem from="1644320872268" duration="439000" />
       <workItem from="1644348297856" duration="45000" />
-      <workItem from="1644348353660" duration="3871000" />
+      <workItem from="1644348353660" duration="9779000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <created>1644095264845</created>
@@ -322,7 +319,98 @@
       <option name="project" value="LOCAL" />
       <updated>1644352172570</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="removed unused useEffect">
+      <created>1644352248491</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1644352248491</updated>
+    </task>
+    <task id="LOCAL-00032" summary="misc">
+      <created>1644352278691</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1644352278691</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated absolute import paths">
+      <created>1644352352984</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1644352352984</updated>
+    </task>
+    <task id="LOCAL-00034" summary="implemented updateFailedError helper">
+      <created>1644353767354</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1644353767354</updated>
+    </task>
+    <task id="LOCAL-00035" summary="removed unneeded ts-ignore">
+      <created>1644357732072</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357732072</updated>
+    </task>
+    <task id="LOCAL-00036" summary="removed unneeded ts-ignore">
+      <created>1644357749876</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357749876</updated>
+    </task>
+    <task id="LOCAL-00037" summary="uploading the prisma schema">
+      <created>1644357803231</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357803231</updated>
+    </task>
+    <task id="LOCAL-00038" summary="created api/student/courses/update/[id] route&#10;created api/user/role/[id] route">
+      <created>1644357883914</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357883914</updated>
+    </task>
+    <task id="LOCAL-00039" summary="created api/student/courses/update/[id] route&#10;created api/user/role/[id] route">
+      <created>1644357890002</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357890002</updated>
+    </task>
+    <task id="LOCAL-00040" summary="refactored notProvidedError to checkIfProvided for more clarity">
+      <created>1644357942654</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357942654</updated>
+    </task>
+    <task id="LOCAL-00041" summary="implemented safety check if not course is provided">
+      <created>1644357977713</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1644357977713</updated>
+    </task>
+    <task id="LOCAL-00042" summary="made the student role display all courses correctly in /pages/courses.tsx">
+      <created>1644358075694</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1644358075694</updated>
+    </task>
+    <task id="LOCAL-00043" summary="included some TODOs for persisting bugs">
+      <created>1644358161704</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1644358161704</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,16 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Extracted navbar link items into atomic components (anchorlinks)" />
-    <MESSAGE value="basic homepage&#10;AnchorLink now has variants =primary =secondary" />
-    <MESSAGE value="initialized courses.tsx page which is protected through auth0." />
-    <MESSAGE value="Added footer with logout button to the layout component." />
-    <MESSAGE value="System checks through NewUserWrapper.tsx if the user is already in the database." />
-    <MESSAGE value="System now requires first and last name to be saved in the database before allowing the user to interact with protected routes&#10;- NewUserForm&#10;- api/user/id -&gt; POST request" />
-    <MESSAGE value="Added Student model to database - new users will be students for now" />
-    <MESSAGE value="Creating new user now correctly re-renders page" />
-    <MESSAGE value="Profiles page now displays the 3 courses a user has chosen -&gt; also added api route fetch the courses&#10;/api/student/courses/[id]" />
-    <MESSAGE value="NewUserWrapper now checks if the user's role is admin, teacher, or student" />
     <MESSAGE value="Courses page gets user role through serversideprops now" />
     <MESSAGE value="Teacher model added to database - /api/users/[id] now detects which role the user has" />
     <MESSAGE value="implemented AdminCourseList - backend still checks if user has role of admin in the database" />
@@ -365,6 +443,16 @@
     <MESSAGE value="added wrongRequestMethodError helper" />
     <MESSAGE value="removed old comment" />
     <MESSAGE value="removed unused useEffect" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unused useEffect" />
+    <MESSAGE value="misc" />
+    <MESSAGE value="updated absolute import paths" />
+    <MESSAGE value="implemented updateFailedError helper" />
+    <MESSAGE value="removed unneeded ts-ignore" />
+    <MESSAGE value="uploading the prisma schema" />
+    <MESSAGE value="created api/student/courses/update/[id] route&#10;created api/user/role/[id] route" />
+    <MESSAGE value="refactored notProvidedError to checkIfProvided for more clarity" />
+    <MESSAGE value="implemented safety check if not course is provided" />
+    <MESSAGE value="made the student role display all courses correctly in /pages/courses.tsx" />
+    <MESSAGE value="included some TODOs for persisting bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="included some TODOs for persisting bugs" />
   </component>
 </project>
