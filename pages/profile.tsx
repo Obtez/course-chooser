@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import NewUserWrapper from "../components/Layout/NewUserWrapper";
 import {getSession, withPageAuthRequired} from "@auth0/nextjs-auth0";
-import { useUser } from "@auth0/nextjs-auth0";
-import AdminCourseList from "../components/Profile/AdminCourseList";
-import TeacherCourseList from "../components/Profile/TeacherCourseList";
 
 type Course = {
   id: String;
@@ -26,28 +23,11 @@ const emptyUserData: UserData = {
 }
 
 export default function Profile(props: any) {
-  console.log(props.dbUser)
-  if (props.dbUser.role === 'admin') {
-    return (
-      <div>
-        <AdminCourseList userID={props.dbUser.id} />
-      </div>
-    )
-  }
-
-  if (props.dbUser.role === 'teacher') {
-    return (
-      <div>
-        <TeacherCourseList userID={props.dbUser.id} />
-      </div>
-    )
-  }
-
   return (
     <NewUserWrapper>
       <div>
         <h1>Your Courses</h1>
-
+        <p>WIP</p>
       </div>
     </NewUserWrapper>
   )
