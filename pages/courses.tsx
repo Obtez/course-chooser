@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import NewUserWrapper from '../components/Layout/NewUserWrapper';
-import styles from '../styles/Courses.module.scss';
 import {getSession, withPageAuthRequired} from '@auth0/nextjs-auth0';
+import {matchCourseTitle} from "../helpers/courseHelpers";
+import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import CourseCard from "../components/Courses/CourseCard";
 import PriorityModal from "../components/Modals/PriorityModal";
+import styles from '../styles/Courses.module.scss';
 
 export default function Courses(props: any) {
   const [showModal, setShowModal] = useState<boolean>(false)
@@ -22,17 +23,6 @@ export default function Courses(props: any) {
     if (courses.length === 0) {
       console.log(props.courses.allCourses)
       setCourses([...props.courses.allCourses]);
-    }
-  }
-
-  function matchCourseTitle(courseID: string) {
-    if (!courseID) return { id: '', title: '' };
-    const course = props.courses.allCourses.find((c: any) => c.id === courseID);
-    if (course) {
-      return {
-        title: course.title,
-        id: courseID,
-      };
     }
   }
 
