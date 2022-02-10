@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!role) {
       notFoundError(res, 'Error finding user role in database.');
     } else {
-      res.status(200).json({ role: role });
+      res.status(200).send(role);
     }
   }
 

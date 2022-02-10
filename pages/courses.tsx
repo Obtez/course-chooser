@@ -15,8 +15,7 @@ export default function Courses(props: any) {
     setNewPriority(newPriorityID);
   }
 
-  // TODO Change props.userRole.role.role to be more compact
-  const userRole = props.userRole.role.role;
+  const userRole = props.role.role;
 
   // TODO implement different role lists
   if (userRole === 'student') {
@@ -88,18 +87,18 @@ export const getServerSideProps = withPageAuthRequired({
   getServerSideProps: async ({ req, res }) => {
     const auth0User = getSession(req, res);
     if (auth0User) {
-      const id = auth0User.user.sub;
-      const res = await fetch(`http://localhost:3000/api/courses/${id}`);
-      const data = await res.json();
+      const userID = auth0User.user.sub;
+      const res = await fetch(`http://localhost:3000/api/courses/${userID}`);
+      const courses = await res.json();
 
-      const res2 = await fetch(`http://localhost:3000/api/user/role/${id}`);
+      const res2 = await fetch(`http://localhost:3000/api/user/role/${userID}`);
       const role = await res2.json();
 
       return {
         props: {
-          courses: data,
-          userID: id,
-          userRole: role,
+          courses,
+          userID,
+          role,
         },
       };
     }
@@ -107,7 +106,7 @@ export const getServerSideProps = withPageAuthRequired({
       props: {
         courses: null,
         userID: null,
-        userRole: null,
+        role: null,
       }
     }
   },
