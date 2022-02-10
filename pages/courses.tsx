@@ -1,25 +1,42 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {getSession, withPageAuthRequired} from '@auth0/nextjs-auth0';
 import {matchCourseTitle} from "../helpers/courseHelpers";
+import {useAppSelector, useAppDispatch} from "../hooks/reduxHooks";
 import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import CourseCard from "../components/Courses/CourseCard";
 import PriorityModal from "../components/Modals/PriorityModal";
 import styles from '../styles/Courses.module.scss';
+import {setRole} from "../features/userSlice";
 
 export default function Courses(props: any) {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [newPriority, setNewPriority] = useState<string>('')
   const [courses, setCourses] = useState<any>([]);
+  const [loading, setLoading] = useState<boolean>(true)
+
+  const user = useAppSelector(state => state.user);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (loading) {
+      const userRole = props.role.role;
+      dispatch(setRole(userRole))
+      setLoading(false)
+    }
+  }, [loading, props.role.role, dispatch])
+
+  console.log(user.role);
 
   function toggleModal(newPriorityID: string) {
     setShowModal(!showModal);
     setNewPriority(newPriorityID);
   }
 
-  const userRole = props.role.role;
+  if (!user) return null;
+
 
   // TODO implement different role lists
-  if (userRole === 'student') {
+  if (user.role === 'student') {
     if (courses.length === 0) {
       console.log(props.courses.allCourses)
       setCourses([...props.courses.allCourses]);
