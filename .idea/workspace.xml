@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="implemented handling of admin role in regard to CourseCard population in /pages/courses.tsx">
-      <change afterPath="$PROJECT_DIR$/types/courseTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/userTypes.ts" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="removed unused variables / types">
+      <change afterPath="$PROJECT_DIR$/components/Atoms/Button/Button.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Atoms/Button/Button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/AnchorLink/AnchorLink.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/AnchorLink/AnchorLink.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Form/CourseForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Form/CourseForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/courseHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/courseHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/courseTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/courseTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
-        <option value="SCSS File" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -159,14 +164,7 @@
       <workItem from="1644580427011" duration="116000" />
       <workItem from="1644582411917" duration="133000" />
       <workItem from="1644591186835" duration="815000" />
-      <workItem from="1644599580096" duration="171000" />
-    </task>
-    <task id="LOCAL-00008" summary="basic homepage&#10;AnchorLink now has variants =primary =secondary">
-      <created>1644100557025</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1644100557025</updated>
+      <workItem from="1644599580096" duration="2055000" />
     </task>
     <task id="LOCAL-00009" summary="initialized courses.tsx page which is protected through auth0.">
       <created>1644101152889</created>
@@ -504,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644533459456</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="removed unused variables / types">
+      <created>1644599799114</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1644599799115</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed unused useEffect" />
     <MESSAGE value="misc" />
     <MESSAGE value="updated absolute import paths" />
     <MESSAGE value="implemented updateFailedError helper" />
@@ -559,6 +563,7 @@
     <MESSAGE value="extracted matchCourseTitle function and created unit-test for it" />
     <MESSAGE value="implemented redux and redux toolkit" />
     <MESSAGE value="implemented handling of admin role in regards to CourseCard population in /pages/courses.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented handling of admin role in regards to CourseCard population in /pages/courses.tsx" />
+    <MESSAGE value="removed unused variables / types" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unused variables / types" />
   </component>
 </project>

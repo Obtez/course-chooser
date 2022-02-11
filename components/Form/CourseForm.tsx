@@ -1,16 +1,7 @@
-import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, {useState} from 'react';
+import {v4 as uuidv4} from 'uuid';
+import {CourseType, TimeSlot} from "types/courseTypes";
 
-export type TimeSlot = 'week' | 'half-week' | 'slot-one' | 'slot-two' | 'either-slot' | '' | 'not-sure';
-
-export interface CourseType {
-  id: string;
-  title: string;
-  teacherID: string;
-  description: string;
-  room: string;
-  timeSlot: TimeSlot;
-}
 
 const emptyCourse: CourseType = {
   id: '',
@@ -22,12 +13,13 @@ const emptyCourse: CourseType = {
 };
 
 class Course {
-  public title: string;
-  public description: string;
-  public room: string;
-  public timeSlot: string;
-  public id: string;
-  public teacherID: string;
+  private title: string;
+  private description: string;
+  private room: string;
+  private timeSlot: string;
+  private id: string;
+  private teacherID: string;
+
   constructor(
     title: string,
     description: string = '',
@@ -48,7 +40,7 @@ type Props = {
   userID: string;
 };
 
-export default function CourseForm({ userID }: Props) {
+export default function CourseForm({userID}: Props) {
   const [course, setCourse] = useState<CourseType>(emptyCourse);
 
   function handleChange(e: React.FormEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -64,7 +56,7 @@ export default function CourseForm({ userID }: Props) {
     const {title, description, room, timeSlot} = course;
     const newCourse = new Course(title, description, room, timeSlot, userID);
 
-    const res = await fetch(`http://localhost:3000/api/courses/add/${userID}`,{
+    const res = await fetch(`http://localhost:3000/api/courses/add/${userID}`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -72,7 +64,8 @@ export default function CourseForm({ userID }: Props) {
       body: JSON.stringify(newCourse),
     });
     const data = await res.json();
-    console.log(data);
+    // TODO implement success / failure message
+    // if (res.ok) {}
   }
 
   return (
@@ -85,7 +78,7 @@ export default function CourseForm({ userID }: Props) {
       <div>
         <label htmlFor="description">Description</label>
         <input type="text" id="description" name="description"
-               value={course.description} onChange={handleChange} />
+               value={course.description} onChange={handleChange}/>
       </div>
       <div>
         <label htmlFor="room">Room</label>

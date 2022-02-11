@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.scss';
 import AnchorLink from "../components/Atoms/AnchorLink/AnchorLink";
 import {useUser} from "@auth0/nextjs-auth0";
+import Button from "../components/Atoms/Button/Button";
 
 export default function Home() {
   const { user, isLoading } = useUser();

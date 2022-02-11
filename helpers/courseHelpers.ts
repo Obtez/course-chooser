@@ -12,3 +12,14 @@ export function matchCourseTitle(courseID: string, allCourses = []) {
 
   return { id: '', title: '' };
 }
+
+
+export async function fetchCoursesWithUserID(userID: string) {
+  const res = await fetch(`http://localhost:3000/api/courses/${userID}`);
+  return await res.json();
+}
+
+export async function fetchUserRole(userID: string) {
+  const res = await fetch(`http://localhost:3000/api/user/role/${userID}`);
+   return await res.json();
+}

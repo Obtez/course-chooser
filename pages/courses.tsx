@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {getSession, withPageAuthRequired} from '@auth0/nextjs-auth0';
-import {matchCourseTitle} from "../helpers/courseHelpers";
-import {useAppSelector, useAppDispatch} from "../hooks/reduxHooks";
+import {
+  fetchCoursesWithUserID,
+  fetchUserRole,
+  matchCourseTitle
+} from "../helpers/courseHelpers";
+import {useAppDispatch, useAppSelector} from "../hooks/reduxHooks";
 import NewUserWrapper from '../components/Layout/NewUserWrapper';
 import CourseCard from "../components/Courses/CourseCard";
 import PriorityModal from "../components/Modals/PriorityModal";
@@ -33,7 +37,6 @@ export default function Courses(props: any) {
 
   if (!user) return null;
 
-  // TODO implement different role lists
   if (user.role === 'student') {
     if (courses.length === 0) {
       setCourses([...props.courses.allCourses]);
@@ -44,6 +47,10 @@ export default function Courses(props: any) {
     if (props.courses && courses.length === 0) {
       setCourses(props.courses);
     }
+  }
+
+  if (user.role === 'teacher') {
+    // TODO implement this one
   }
 
   function createPriorities() {
@@ -66,26 +73,26 @@ export default function Courses(props: any) {
         <h1>All Courses</h1>
         {/* <CourseForm userID={props.dbUser.id}/> */}
         <ul>
-        {
-          courses.length && courses.map((c:any) => {
-            const hasApplied = () => {
-              if (c.id === props.courses.topCourseID) return true;
-              if (c.id === props.courses.midCourseID) return true;
-              if (c.id === props.courses.lowCourseID) return true;
-              return false;
-            }
+          {
+            courses.length && courses.map((c: any) => {
+              const hasApplied = () => {
+                if (c.id === props.courses.topCourseID) return true;
+                if (c.id === props.courses.midCourseID) return true;
+                if (c.id === props.courses.lowCourseID) return true;
+                return false;
+              }
 
-          return (
-            <CourseCard
-              key={c.id}
-              course={c}
-              userID={props.user.sub}
-              hasApplied={hasApplied()}
-              toggleModal={toggleModal}
-            />
-          )
-          })
-        }
+              return (
+                <CourseCard
+                  key={c.id}
+                  course={c}
+                  userID={props.user.sub}
+                  hasApplied={hasApplied()}
+                  toggleModal={toggleModal}
+                />
+              )
+            })
+          }
         </ul>
       </div>
     </NewUserWrapper>
@@ -94,20 +101,16 @@ export default function Courses(props: any) {
 
 
 export const getServerSideProps = withPageAuthRequired({
-  getServerSideProps: async ({ req, res }) => {
+  getServerSideProps: async ({req, res}) => {
     const auth0User = getSession(req, res);
     if (auth0User) {
-      const userID = auth0User.user.sub;
-      const res = await fetch(`http://localhost:3000/api/courses/${userID}`);
-      const courses = await res.json();
-
-      const res2 = await fetch(`http://localhost:3000/api/user/role/${userID}`);
-      const role = await res2.json();
+      const courses = await fetchCoursesWithUserID(auth0User.user.sub);
+      const role = await fetchUserRole(auth0User.user.sub);
 
       return {
         props: {
           courses,
-          userID,
+          userID: auth0User.user.sub,
           role,
         },
       };
