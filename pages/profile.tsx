@@ -2,27 +2,7 @@ import React from 'react';
 import NewUserWrapper from "../components/Layout/NewUserWrapper";
 import {getSession, withPageAuthRequired} from "@auth0/nextjs-auth0";
 
-type Course = {
-  id: String;
-  title: String;
-  description: String;
-  teacherID: String;
-  room: String;
-}
-
-type UserData = {
-  firstName: string;
-  lastName: string;
-  gradeID: string;
-}
-
-const emptyUserData: UserData = {
-  firstName: '',
-  lastName: '',
-  gradeID: '',
-}
-
-export default function Profile(props: any) {
+export default function Profile() {
   return (
     <NewUserWrapper>
       <div>

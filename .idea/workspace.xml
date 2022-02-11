@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="implemented handling of admin role in regards to CourseCard population in /pages/courses.tsx">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="implemented handling of admin role in regard to CourseCard population in /pages/courses.tsx">
+      <change afterPath="$PROJECT_DIR$/types/courseTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/userTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/userSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +159,7 @@
       <workItem from="1644580427011" duration="116000" />
       <workItem from="1644582411917" duration="133000" />
       <workItem from="1644591186835" duration="815000" />
+      <workItem from="1644599580096" duration="171000" />
     </task>
     <task id="LOCAL-00008" summary="basic homepage&#10;AnchorLink now has variants =primary =secondary">
       <created>1644100557025</created>
@@ -518,7 +515,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
