@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="extracted matchCourseTitle function and created unit-test for it">
-      <change afterPath="$PROJECT_DIR$/features/courseSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/userSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/reduxHooks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/store.ts" afterDir="false" />
+    <list default="true" id="9c9bd0e8-dfcf-45b0-84c4-3af930adcc59" name="Changes" comment="implemented handling of admin role in regards to CourseCard population in /pages/courses.tsx">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Form/CourseForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Form/CourseForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/userSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +62,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -87,7 +86,7 @@
       <recent name="$PROJECT_DIR$/components/Layout" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.courseHelpers.spec.js">
+  <component name="RunManager" selected="npm.Run Dev">
     <configuration name="courseHelpers.spec.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -96,19 +95,6 @@
       <envs />
       <scope-kind value="TEST_FILE" />
       <test-file value="$PROJECT_DIR$/__tests__/courseHelpers.spec.js" />
-      <method v="2" />
-    </configuration>
-    <configuration name="should return an object with empty values if nothing is passed in" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/__tests__/courseHelper.spec.js" />
-      <test-names>
-        <test-name value="should return an object with empty values if nothing is passed in" />
-      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="test matching course title with id (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
@@ -124,33 +110,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="test matching course title with id" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/__tests__/courseHelper.spec.js" />
-      <test-names>
-        <test-name value="test matching course title with id" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="test matching course title with id.'should return an object with empty values if either argument is' +&#10;        ' empty'" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/__tests__/courseHelper.spec.js" />
-      <test-names>
-        <test-name value="test matching course title with id" />
-        <test-name value="'should return an object with empty values if either argument is' +&#10;        ' empty'" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="Run Dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -161,13 +120,15 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Jest.courseHelpers.spec.js" />
+      <item itemvalue="Jest.test matching course title with id (1)" />
+      <item itemvalue="npm.Run Dev" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Jest.courseHelpers.spec.js" />
         <item itemvalue="Jest.test matching course title with id (1)" />
-        <item itemvalue="Jest.test matching course title with id.'should return an object with empty values if either argument is' +&#10;        ' empty'" />
-        <item itemvalue="Jest.test matching course title with id" />
-        <item itemvalue="Jest.should return an object with empty values if nothing is passed in" />
       </list>
     </recent_temporary>
   </component>
@@ -196,14 +157,12 @@
       <workItem from="1644348297856" duration="45000" />
       <workItem from="1644348353660" duration="12517000" />
       <workItem from="1644429974398" duration="17000" />
-      <workItem from="1644525184437" duration="6728000" />
-    </task>
-    <task id="LOCAL-00007" summary="Extracted navbar link items into atomic components (anchorlinks)">
-      <created>1644098733163</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1644098733163</updated>
+      <workItem from="1644525184437" duration="6780000" />
+      <workItem from="1644554996480" duration="2664000" />
+      <workItem from="1644557697857" duration="1000" />
+      <workItem from="1644580427011" duration="116000" />
+      <workItem from="1644582411917" duration="133000" />
+      <workItem from="1644591186835" duration="815000" />
     </task>
     <task id="LOCAL-00008" summary="basic homepage&#10;AnchorLink now has variants =primary =secondary">
       <created>1644100557025</created>
@@ -541,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644529657016</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="implemented redux and redux toolkit">
+      <created>1644533459455</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1644533459456</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,8 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added wrongRequestMethodError helper" />
-    <MESSAGE value="removed old comment" />
     <MESSAGE value="removed unused useEffect" />
     <MESSAGE value="misc" />
     <MESSAGE value="updated absolute import paths" />
@@ -584,6 +548,8 @@
     <MESSAGE value="added testing libraries" />
     <MESSAGE value="reset profile page" />
     <MESSAGE value="extracted matchCourseTitle function and created unit-test for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="extracted matchCourseTitle function and created unit-test for it" />
+    <MESSAGE value="implemented redux and redux toolkit" />
+    <MESSAGE value="implemented handling of admin role in regards to CourseCard population in /pages/courses.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented handling of admin role in regards to CourseCard population in /pages/courses.tsx" />
   </component>
 </project>

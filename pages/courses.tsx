@@ -25,7 +25,6 @@ export default function Courses(props: any) {
     }
   }, [loading, props.role.role, dispatch])
 
-  console.log(user.role);
 
   function toggleModal(newPriorityID: string) {
     setShowModal(!showModal);
@@ -34,12 +33,16 @@ export default function Courses(props: any) {
 
   if (!user) return null;
 
-
   // TODO implement different role lists
   if (user.role === 'student') {
     if (courses.length === 0) {
-      console.log(props.courses.allCourses)
       setCourses([...props.courses.allCourses]);
+    }
+  }
+
+  if (user.role === 'admin') {
+    if (props.courses && courses.length === 0) {
+      setCourses(props.courses);
     }
   }
 

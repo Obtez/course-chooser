@@ -12,7 +12,7 @@ const initialState: UserState = {
   id: '',
   firstName: '',
   lastName: '',
-  role: 'student',
+  role: '',
 }
 
 export const userSlice = createSlice({
