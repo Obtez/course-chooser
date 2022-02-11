@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-type TimeSlot = 'week' | 'half-week' | 'slot-one' | 'slot-two' | 'either-slot' | '' | 'not-sure';
+export type TimeSlot = 'week' | 'half-week' | 'slot-one' | 'slot-two' | 'either-slot' | '' | 'not-sure';
 
-interface Course {
+export interface CourseType {
   id: string;
   title: string;
   teacherID: string;
@@ -12,7 +12,7 @@ interface Course {
   timeSlot: TimeSlot;
 }
 
-const emptyCourse: Course = {
+const emptyCourse: CourseType = {
   id: '',
   title: '',
   teacherID: '',
@@ -22,6 +22,12 @@ const emptyCourse: Course = {
 };
 
 class Course {
+  public title: string;
+  public description: string;
+  public room: string;
+  public timeSlot: string;
+  public id: string;
+  public teacherID: string;
   constructor(
     title: string,
     description: string = '',
@@ -43,7 +49,7 @@ type Props = {
 };
 
 export default function CourseForm({ userID }: Props) {
-  const [course, setCourse] = useState<Course>(emptyCourse);
+  const [course, setCourse] = useState<CourseType>(emptyCourse);
 
   function handleChange(e: React.FormEvent<HTMLInputElement | HTMLSelectElement>) {
     const {name, value} = e.currentTarget;

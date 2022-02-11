@@ -12,7 +12,7 @@ export default function Home() {
         you have already applied to.</p>
 
       <div className={styles.btn__container}>
-        <AnchorLink href={'/api/auth/login'} variant={'primary'}>Login</AnchorLink>
+        <AnchorLink href={'/api/auth/login'} variant={'primary'}>LOGIN</AnchorLink>
       </div>
     </div>)
   }
